@@ -3,277 +3,19 @@
 @import 'reset';
 @import 'libs';
 @import 'global';
+@import 'components/header';
+@import 'home/slider';
+@import 'components/prod-card';
+@import 'components/filter';
+@import 'components/footer';
 
-.header {
-  padding: 46px 0 46px;
-
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @extend %rubik-500;
-  }
-}
-
-.menu {
-  &__list {
-    display: flex;
-  }
-
-  &__item+.menu__item {
-    margin-left: 30px;
-  }
-
-  &__link {
-    font-size: 15px;
-    color: #436372;
-  }
-}
-
-.bar {
-  display: flex;
-  height: 52px;
-
-  &__middle-links {
-    display: flex;
-    margin: 0 20px;
-    padding: 10px;
-    background-color: #fcd7b6;
-    border-radius: 50px;
-  }
-
-  &__link {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__num {
-    position: absolute;
-    top: 3px;
-    right: 18px;
-    width: 17px;
-    height: 17px;
-    background-color: #fff;
-    border-radius: 50%;
-    @extend %dmsans-400;
-    font-size: 10px;
-    line-height: 20px; //высоту прописал чтобы цифры вертикально стали по центру
-    color: #243f4d;
-    text-align: center;
-  }
-
-  &__num--cart {
-    right: 22px;
-  }
-
-  &__link--search {
-    width: 51px;
-    background-color: #edf1f4;
-    border-radius: 50%;
-  }
-
-  &__link--like {
-    padding: 13px 29px 2px 31px;
-    border-right: 1px solid #fff;
-  }
-
-  &__link--cart {
-    padding: 11px 32px 3px 26px;
-  }
-
-  &__link--menu {
-    width: 51px;
-    background-color: #a3bbc8;
-    border-radius: 50%;
-  }
-}
-
-.footer {
-  font-size: 14px;
-  color: $link-foot;
-
-  &__top {
-    padding: 80px 0 63px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #a3bbc8;
-  }
-
-  &__contact {
-    max-width: 210px;
-  }
-
-  &__address {
-    margin-top: 25px;
-    font-style: normal;
-  }
-
-  &__contact-link {
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  &__nav {
-    max-width: 250px;
-  }
-
-  &__heading {
-    margin: 17px 0;
-    @extend %dmsans-700;
-    font-size: 16px;
-    color: #1f2044;
-    text-transform: uppercase;
-  }
-
-  &__link {
-    margin-bottom: 11px;
-    display: block;
-  }
-
-  &__text {
-    display: block;
-    max-width: 240px;
-    margin-bottom: 39px;
-    cursor: pointer;
-  }
-
-  &__input {
-    max-width: 160px;
-    width: 100%;
-    padding: 8px;
-    background-color: #fef7f0;
-    border: none;
-
-    &::placeholder {
-      @extend %dmsans-400;
-      font-size: 12px;
-      color: #234969;
-    }
-  }
-
-  &__btn {
-    padding: 8px 10px;
-    color: #fff;
-    background-color: $link-bg;
-    @extend %dmsans-400;
-    border: none;
-    text-transform: uppercase;
-  }
-
-  &__bottom {
-    display: flex;
-    justify-content: space-between;
-    padding: 31px 0 28px;
-
-    &-list {
-      display: flex;
-      align-items: center;
-    }
-
-    &-link {
-      display: inline-block;
-    }
-
-    &-item {
-      line-height: 18px; //для бордера
-
-      &+& {
-        margin-left: 20px;
-      }
-
-      &:not(:last-child) {
-        padding-right: 13px;
-        border-right: 1px solid#7b7b7b;
-      }
-    }
-  }
-}
-
-.slider {
-  &__item {
-    height: 820px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-
-  &__content {
-    margin-top: 215px;
-  }
-
-  &__heading {
-    max-width: 430px;
-    margin-bottom: 28px;
-    @extend %rubik-500;
-    font-size: 72px;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  &__text {
-    max-width: 385px;
-    margin-bottom: 57px;
-    font-size: 18px;
-  }
-
-  &__link {
-    padding: 21px 104px 21px 25px;
-    background-color: $link-bg;
-    color: #fff;
-    @extend %rubik-500;
-    font-size: 15px;
-    position: relative;
-
-    &:after {
-      content: '';
-      position: absolute;
-      background-image: url('../images/icons/btn-arrow.svg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      width: 23px;
-      height: 10px;
-      top: 50%;
-      right: 18px;
-      transform: translateY(-50%);
-    }
-  }
-
-  .slick-dots {
-    display: flex;
-    position: absolute;
-    bottom: 45px;
-    left: 50%;
-    transform: translateX(-50%);
-    //если задаю margin-top: -100px вместо абсолюта, дотсов не видно, пробовал зет-индексами поиграться, но не получилось
-
-    li {
-      margin-left: 10px;
-
-      button {
-        background-color: #fde3cc;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        @extend %rubik-500;
-        font-size: 11px;
-        transition: background-color 0.3s;
-
-        &:hover,
-        .slick-active {
-          background-color: #fff;
-        }
-      }
-    }
-  }
-}
 
 .service {
   &__inner {
-    height: 169px;
+    padding: 40px 0;
     display: flex;
     background-color: #fef7f0;
+    line-height: 1.7;
   }
 
   &__item {
@@ -292,40 +34,33 @@
     padding-left: 80px;
     position: relative;
 
-    &--support::after {
+    &::after {
       content: '';
       position: absolute;
-      background-image: url('../images/icons/support.svg');
       background-repeat: no-repeat;
-      background-size: cover;
-      left: 0;
-      top: 0;
-      width: 50px;
-      height: 53px;
-    }
-
-    &--delivery::after {
-      content: '';
-      position: absolute;
-      background-image: url('../images/icons/delivery.svg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      left: 0;
-      top: 0;
-      width: 54px;
-      height: 37px;
-    }
-
-    &--secure::after {
-      content: '';
-      position: absolute;
-      background-image: url('../images/icons/secure.svg');
-      background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
       left: 0;
       top: 0;
       width: 54px;
       height: 52px;
+    }
+
+    &--support {
+      &::after {
+        background-image: url('../images/icons/support.svg');
+      }
+    }
+
+    &--delivery {
+      &::after {
+        background-image: url('../images/icons/delivery.svg');
+      }
+    }
+
+    &--secure {
+      &::after {
+        background-image: url('../images/icons/secure.svg');
+      }
     }
   }
 
@@ -357,95 +92,11 @@
     margin-bottom: 18px;
   }
 
-  &__filter {
-    margin-bottom: 70px;
-  }
-
-  .mixitup-control-active {
-    color: $title;
-  }
-
-  &__button {
-    color: #8b8b8b;
-    background-color: transparent;
-
-    &+& {
-      margin-left: 25px;
-    }
-
-    &:hover {
-      color: $title;
-    }
-  }
-
   &__items {
     display: grid;
-    min-height: 800px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 30px 40px;
   }
-
-  &__item {
-    padding: 0 5px 28px;
-    max-width: 270px;
-    width: 100%;
-    height: 381px;
-    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-
-    &:hover .products__links {
-      opacity: 1;
-    }
-  }
-
-  &__links {
-    position: absolute;
-    bottom: 141px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    height: 45px;
-    opacity: 0;
-  }
-
-  &__link {
-    width: 45px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &+& {
-      margin-left: 15px;
-    }
-
-    &:hover {
-      background-color: $link-bg;
-
-      & path {
-        fill: #fff;
-      }
-    }
-
-  }
-
-  &__img {
-    margin-top: auto;
-  }
-
-  &__link-name {
-    margin-top: auto;
-    margin-bottom: 5px;
-    @extend %dmsans-500;
-  }
-
-  &__price {
-    color: $note;
-  }
 }
+

@@ -1,0 +1,104 @@
+.footer {
+  font-size: 14px;
+  color: $link-foot;
+
+  &__top {
+    padding: 80px 0 63px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #a3bbc8;
+  }
+
+  &__contact {
+    max-width: 210px;
+  }
+
+  &__address {
+    margin-top: 25px;
+    font-style: normal;
+  }
+
+  &__contact-link {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__nav {
+    max-width: 250px;
+  }
+
+  &__heading {
+    margin: 17px 0;
+    @extend %dmsans-700;
+    font-size: 16px;
+    color: #1f2044;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    margin-bottom: 11px;
+    display: block;
+  }
+
+  &__text {
+    display: block;
+    max-width: 240px;
+    margin-bottom: 39px;
+    cursor: pointer;
+  }
+
+  &__label {
+    font-size: 0;
+  }
+
+  &__input {
+    max-width: 160px;
+    width: 100%;
+    padding: 8px;
+    background-color: #fef7f0;
+    border: none;
+
+    &::placeholder {
+      @extend %dmsans-400;
+      font-size: 12px;
+      color: #234969;
+    }
+  }
+
+  &__btn {
+    padding: 8px 10px;
+    color: #fff;
+    background-color: $link-bg;
+    @extend %dmsans-400;
+    border: none;
+    text-transform: uppercase;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 31px 0 28px;
+  }
+
+  &__bottom-list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__bottom-link {
+    display: inline-block;
+  }
+
+  &__bottom-item {
+    line-height: 18px; //для бордера
+
+    &+& {
+      margin-left: 20px;
+    }
+
+    &:not(:last-child) {
+      padding-right: 13px;
+      border-right: 1px solid#7b7b7b;
+    }
+  }
+}

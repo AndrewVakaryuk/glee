@@ -1,0 +1,100 @@
+.slider {
+  &__item {
+    overflow: hidden;
+  }
+
+  &__item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 820px;
+  }
+
+  &__heading {
+    max-width: 430px;
+    margin-bottom: 28px;
+    @extend %rubik-500;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    max-width: 385px;
+    margin-bottom: 57px;
+    font-size: 18px;
+  }
+
+  &__link {
+    padding: 21px 104px 21px 25px;
+    background-color: $link-bg;
+    color: #fff;
+    @extend %rubik-500;
+    font-size: 15px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-image: url('../images/icons/btn-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 23px;
+      height: 10px;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__image-box {
+    max-width: 700px;
+    object-fit: fill;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../images/slider/circle-bg.png');
+      background-repeat: no-repeat;
+      width: 634px;
+      height: 634px;
+      right: -130px;
+      bottom: 50%;
+      transform: translateY(50%);
+      z-index: 0;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 1;
+  }
+
+  .slick-dots {
+    display: flex;
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    li {
+      margin-left: 10px;
+
+      button {
+        background-color: #fde3cc;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        @extend %rubik-500;
+        font-size: 11px;
+        transition: background-color 0.3s;
+
+        &:hover,
+        .slick-active {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
