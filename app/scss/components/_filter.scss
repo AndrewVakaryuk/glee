@@ -1,0 +1,26 @@
+.filter {
+  margin-bottom: 70px;
+  @extend %dmsans-700;
+
+  .mixitup-control-active {
+    color: $title;
+  }
+
+  &__button {
+    color: #8b8b8b;
+    background-color: transparent;
+    transition: color .3s;
+
+    &:focus {
+      outline-color: transparent;
+    }
+
+    &+& {
+      margin-left: 25px;
+    }
+
+    &:hover {
+      color: $title;
+    }
+  }
+}

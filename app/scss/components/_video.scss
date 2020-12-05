@@ -1,0 +1,39 @@
+.video {
+  margin: 60px 0;
+  background-image: url(../images/video-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__link {
+    position: relative;
+    transition: all .3s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url(../images/icons/play.svg);
+      background-repeat: no-repeat;
+      width: 22px;
+      height: 25px;
+      bottom: 52%;
+      right: 50%;
+      transform: translate(50%, 50%);
+    }
+
+    &:hover .cls-1 {
+      fill: #fff;
+    }
+
+    &:focus {
+      outline-color: transparent;
+
+      .cls-2 {
+        fill: red;
+      }
+    }
+  }
+}

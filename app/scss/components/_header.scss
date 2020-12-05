@@ -1,0 +1,155 @@
+.header {
+  padding: 46px 0 46px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend %rubik-500;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &+& {
+      margin-left: 30px;
+    }
+  }
+
+  &__link {
+    font-size: 15px;
+    color: #436372;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $title;
+    }
+  }
+}
+
+.bar {
+  display: flex;
+  height: 52px;
+
+  &__search-box {
+    position: relative;
+    width: 51px;
+    height: 51px;
+
+    &:hover .bar__input {
+      width: 250px;
+      padding: 0 55px 0 5px;
+      border: 2px solid #edf1f4;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    border: none;
+    border-radius: 40px;
+    transition: all .5s;
+    width: 51px;
+    height: 52px;
+    z-index: 9;
+
+    &:focus {
+      width: 250px;
+      padding: 0 55px 0 5px;
+      border: 2px solid #edf1f4;
+      outline-color: transparent;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 52px;
+    border-radius: 50%;
+    transition: all .3s;
+
+    &:focus {
+      outline-color: transparent;
+    }
+
+    &:hover {
+      background-color: #7f732d;
+
+      & path {
+        fill: #fff;
+      }
+    }
+
+    &--search {
+      position: absolute;
+      background-color: #edf1f4;
+      z-index: 10;
+    }
+
+    &--burger {
+      background-color: #a3bbc8;
+    }
+  }
+
+  &__middle-links {
+    display: flex;
+    margin: 0 20px;
+    padding: 10px;
+    background-color: #fcd7b6;
+    border-radius: 50px;
+    transition: all .3s;
+
+    &:hover {
+      background-color: #7f732d;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+
+    &:hover {
+      & path {
+        fill: #fff;
+      }
+    }
+
+    &--like {
+      padding: 13px 29px 2px 31px;
+      border-right: 1px solid #fff;
+    }
+
+    &--cart {
+      padding: 11px 32px 3px 26px;
+    }
+  }
+
+  &__num {
+    position: absolute;
+    top: 3px;
+    right: 18px;
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    border-radius: 50%;
+    @extend %dmsans-400;
+    font-size: 10px;
+    line-height: 2;
+    color: #243f4d;
+    text-align: center;
+
+    &--cart {
+      right: 22px;
+    }
+  }
+}

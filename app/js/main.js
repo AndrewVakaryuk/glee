@@ -5,6 +5,17 @@ $(function () {
     arrows: false
   });
 
-  var mixer = mixitup('.products__items');
+  var mixerOne = mixitup('.products__mix', {
+    controls: {
+        scope: 'local'
+    }
+  });
+
+  var mixerTwo = mixitup('.trend__mix', {
+      controls: {
+          scope: 'local'
+      }
+  });
+
   
 });

@@ -1,0 +1,59 @@
+.goods-card {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+  background-color: #feefe2;
+
+  &__img {
+    margin-top: -95px;
+  }
+
+  &__content {
+    max-width: 340px;
+    padding-top: 90px;
+    margin-left: 10px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    @extend %dmsans-700;
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  &__descr {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    padding: 20px 85px 20px 15px;
+    @extend %rubik-500;
+    font-size: 15px;
+    color: #436372;
+    border: 1px solid #b3b7b5;
+    border-radius: 5px;
+    position: relative;
+    transition: all .3s;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-image: url('../images/icons/btn-arrow-grey.svg');
+      background-repeat: no-repeat;
+      width: 23px;
+      height: 10px;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      background-color: #fff;
+      font-size: 18px;
+    }
+
+    &:active {
+      background-color: $link-bg;
+    }
+  }
+}
