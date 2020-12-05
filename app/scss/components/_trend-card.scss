@@ -1,0 +1,40 @@
+.trend-card {
+  padding: 35px;
+  min-height: 245px;
+  overflow: hidden;
+  @extend %dmsans-700;
+  text-align: left;
+  position: relative;
+
+  &__title {
+    font-size: 20px;
+    color: $title;
+    margin-bottom: 10px;
+    max-width: 175px;
+    font-size: 20px;
+    z-index: 2;
+    position: relative;
+  }
+
+  &__style {
+    color: $note;
+    z-index: 2;
+  }
+
+  &__img-wrapper {
+    position: absolute;
+    left: 85px;
+    bottom: 35px;
+    z-index: 0;
+    width: 370px;
+  }
+
+  &__img {
+    margin: 0 auto;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

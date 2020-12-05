@@ -21,6 +21,10 @@
   &__contact-link {
     display: block;
     margin-bottom: 20px;
+
+    &:hover {
+      color: $title;
+    }
   }
 
   &__nav {
@@ -38,6 +42,10 @@
   &__link {
     margin-bottom: 11px;
     display: block;
+
+    &:hover {
+      color: $title;
+    }
   }
 
   &__text {
@@ -51,12 +59,22 @@
     font-size: 0;
   }
 
+  &__form-wrapper {
+    display: flex;
+  }
+
   &__input {
     max-width: 160px;
     width: 100%;
-    padding: 8px;
+    padding: 6px;
     background-color: #fef7f0;
-    border: none;
+    // border: none;
+    border: 2px solid transparent;
+
+    &:focus {
+      border: 2px solid $link-bg;
+      outline-color: transparent;
+    }
 
     &::placeholder {
       @extend %dmsans-400;
@@ -66,12 +84,17 @@
   }
 
   &__btn {
-    padding: 8px 10px;
+    padding: 6px 10px;
     color: #fff;
     background-color: $link-bg;
     @extend %dmsans-400;
     border: none;
     text-transform: uppercase;
+
+    &:active {
+      background-color: $link-foot;
+      outline-color: transparent;
+    }
   }
 
   &__bottom {
@@ -87,6 +110,10 @@
 
   &__bottom-link {
     display: inline-block;
+
+    &:hover {
+      color: $title;
+    }
   }
 
   &__bottom-item {

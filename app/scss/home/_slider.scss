@@ -1,6 +1,7 @@
 .slider {
   &__item {
-    overflow: hidden;
+    // overflow: hidden; 
+    //если свойство активировано, появляется небольшой нижний отступ у слайдера
   }
 
   &__item-wrapper {
@@ -31,19 +32,29 @@
     color: #fff;
     @extend %rubik-500;
     font-size: 15px;
+    transition: all .3s;
     position: relative;
+    outline-color: transparent;
 
     &:after {
       content: '';
       position: absolute;
       background-image: url('../images/icons/btn-arrow.svg');
       background-repeat: no-repeat;
-      background-size: cover;
       width: 23px;
       height: 10px;
       top: 50%;
       right: 18px;
       transform: translateY(-50%);
+    }
+
+    &:hover {
+      font-size: 17px;
+    }
+
+    &:active {
+      background-color: #fff;
+      color: $link-bg;
     }
   }
 
@@ -88,11 +99,15 @@
         border-radius: 50%;
         @extend %rubik-500;
         font-size: 11px;
-        transition: background-color 0.3s;
+        transition: all 0.3s;
 
         &:hover,
         .slick-active {
           background-color: #fff;
+        }
+
+        &:focus {
+          outline-color: #fde3cc;
         }
       }
     }

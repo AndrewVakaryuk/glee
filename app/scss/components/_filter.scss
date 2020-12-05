@@ -1,5 +1,6 @@
 .filter {
   margin-bottom: 70px;
+  @extend %dmsans-700;
 
   .mixitup-control-active {
     color: $title;

@@ -1,0 +1,9 @@
+.prod-box {
+  padding: 100px 0 50px;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+}
